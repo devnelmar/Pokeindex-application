@@ -15,23 +15,7 @@ class PokemonStatsSerializer(serializers.ModelSerializer):
         )
 
 
-class PokemonPrePhaseSerializer(serializers.ModelSerializer):
-    pokemon_stats = PokemonStatsSerializer(many=True)
-
-    class Meta:
-        model = Pokemon
-        fields = (
-            "id",
-            "name",
-            "weight",
-            "pokemon_api_id",
-            "is_baby",
-            "species",
-            "pokemon_stats",
-        )
-
-
-class PokemonPostPhaseSerializer(serializers.ModelSerializer):
+class PokemonPhaseSerializer(serializers.ModelSerializer):
     pokemon_stats = PokemonStatsSerializer(many=True)
 
     class Meta:
@@ -49,8 +33,8 @@ class PokemonPostPhaseSerializer(serializers.ModelSerializer):
 
 class PokemonSerializer(serializers.ModelSerializer):
     pokemon_stats = PokemonStatsSerializer(many=True)
-    pre_phase = PokemonPrePhaseSerializer(many=False)
-    post_phase = PokemonPostPhaseSerializer(many=False)
+    pre_phase = PokemonPhaseSerializer(many=False)
+    post_phase = PokemonPhaseSerializer(many=False)
 
     class Meta:
         model = Pokemon
