@@ -2,7 +2,7 @@
 
 This is a django application built using Python3, Postgres, Django Rest Framework, Docker and Docker-compose.
 
-The proposal is having a command for create pokemons storaging info from a public API and endpoints that allow search pokemons and details from database, 
+The proposal is having a command for create pokemons storaging info from a public API and endpoints that allow search pokemons and details from database.
 
 # Setup
 
