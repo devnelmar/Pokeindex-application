@@ -71,41 +71,7 @@ It will return a response like this
                     "effort": 2,
                     "url": "https://pokeapi.co/api/v2/stat/1/"
                 },
-                {
-                    "id": "ec7adf77-d529-4363-ab7e-7c5fe9741fd7",
-                    "name": "attack",
-                    "base_stat": "62",
-                    "effort": 0,
-                    "url": "https://pokeapi.co/api/v2/stat/2/"
-                },
-                {
-                    "id": "e75ea911-a5ac-48a6-ba4e-7023498925df",
-                    "name": "defense",
-                    "base_stat": "67",
-                    "effort": 0,
-                    "url": "https://pokeapi.co/api/v2/stat/3/"
-                },
-                {
-                    "id": "28366696-69b8-4b95-b4fe-90a70e8206ab",
-                    "name": "special-attack",
-                    "base_stat": "55",
-                    "effort": 0,
-                    "url": "https://pokeapi.co/api/v2/stat/4/"
-                },
-                {
-                    "id": "ff961f8c-92db-4a88-a624-6d91bd128420",
-                    "name": "special-defense",
-                    "base_stat": "55",
-                    "effort": 0,
-                    "url": "https://pokeapi.co/api/v2/stat/5/"
-                },
-                {
-                    "id": "7e39e73d-01ea-4211-8658-fa8a02edfcc2",
-                    "name": "speed",
-                    "base_stat": "56",
-                    "effort": 0,
-                    "url": "https://pokeapi.co/api/v2/stat/6/"
-                }
+                ...
             ]
         },
         "post_phase": null,
@@ -117,42 +83,50 @@ It will return a response like this
                 "effort": 3,
                 "url": "https://pokeapi.co/api/v2/stat/1/"
             },
-            {
-                "id": "0297f9ee-c1c4-4ccf-a653-b712f398f766",
-                "name": "attack",
-                "base_stat": "92",
-                "effort": 0,
-                "url": "https://pokeapi.co/api/v2/stat/2/"
-            },
-            {
-                "id": "c99fe138-bf1b-43f9-ab10-18b945571704",
-                "name": "defense",
-                "base_stat": "87",
-                "effort": 0,
-                "url": "https://pokeapi.co/api/v2/stat/3/"
-            },
-            {
-                "id": "f040ec9e-9a51-411e-96ab-33b8ccaa7158",
-                "name": "special-attack",
-                "base_stat": "75",
-                "effort": 0,
-                "url": "https://pokeapi.co/api/v2/stat/4/"
-            },
-            {
-                "id": "0e8c02bb-ca74-4533-8990-7570cb3b3587",
-                "name": "special-defense",
-                "base_stat": "85",
-                "effort": 0,
-                "url": "https://pokeapi.co/api/v2/stat/5/"
-            },
-            {
-                "id": "edc41925-e8b9-486e-ac88-6f43c0ce4c6c",
-                "name": "speed",
-                "base_stat": "76",
-                "effort": 0,
-                "url": "https://pokeapi.co/api/v2/stat/6/"
-            }
+            ...
         ]
     },
 
 ```
+
+# Models
+
+A litle explain about what contains models:
+
+Class Pokemon():
+
+Name: is the main name of the pokemon
+
+Height: is the height of the pokemon as STR value
+
+Weight: is the weight of the pokemon as STR value
+
+Pokemon_api_id: is the id from PokeApi
+
+Is_baby: boolean that represent if is young or not
+
+Species: is a dict that containt relevant info from pokemon
+
+Pre_phase: is the Pre evolution for the pokemon
+
+Post_phase: is the next evolution for the pokemon 
+
+Class PokemonStats():
+
+Name: is the name of stat
+
+Base_stats: is the stat value as STR value
+
+Effort: is the number of effort for pokemon as INT value
+
+Url: is the url of the pokemon stat
+
+Pokemon: Is the pokemon who have this stats
+
+# Admin
+
+You can run command for create a superuser:
+`docker-compose -f local.yml run --rm django python3 manage.py createsuperuser`
+
+Whit the user that you has been created, you can access data from this url, once you has the server running: http://localhost:8000/admin/
+

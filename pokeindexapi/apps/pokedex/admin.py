@@ -29,7 +29,7 @@ class PokemonStatsAdmin(admin.ModelAdmin):
         "url",
         "pokemon",
     )
-    list_filter = ("name", "pokemon_api_id", "height", "weight")
+    list_filter = ("name", "base_stat")
     model = PokemonStats
 
 
